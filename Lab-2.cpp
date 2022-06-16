@@ -1,33 +1,35 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main(){
-    int size;
-    cout<<"Enter size of arry: ";
-    cin>>size;
-
-    int a[size];
-    //input programe;
-    for(int i = 0; i<=size-1; i++){
-        printf("Enter index %d: ", i);
-        cin>>a[i];
-    }
-
-    int position;
-    cout<<"Enter your position you wana delete: ";
-    cin>>position;
-    position--;
-
-    for(int i=position; i<=size; i++){
-        int temp = a[i];
-        a[i] = a[i+1];
-        a[i+1] = temp;
-    }
-
-   
-    for(int i=1; i<=size-1;i++){
-        cout<<a[i]<<" ";
-    }
-}
-
-
+#include<stdio.h>
+main()
+{
+    int arr[100];
+    int i,j,n;
     
+    printf("Enter the size of the Array: ");
+    scanf("%d",&n);
+    for(int i = 0; i<=n-1; i++){
+        printf("Enter index %d: ", i);
+    scanf("%d",&arr[i]);
+    }
+    printf("\n\nTotal data in the Array is: \n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
+  
+    printf("\nEnter the position you want to delete: ");
+    scanf("%d",&j);
+    while(j<n)
+    {
+        arr[j-1]=arr[j];
+        j++;
+    }
+    n-=1;
+    printf("\n\nAfter deletion the exist data in the list is: \n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    printf("\n\n");
+    return 0;
+}
