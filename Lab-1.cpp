@@ -1,28 +1,35 @@
-#include <bits/stdc++.h>
-#include <list>
-using namespace std;
-void display(list<int> &first){
-list<int> ::iterator i;
-for(i=first.begin(); i!=first.end(); i++ )
-cout<<*i<<"  ";
-
-}
-int main()
+#include<stdio.h>
+main()
 {
-    list<int> element;
-    element.push_back(8);
-    element.push_back(10);
-    element.push_back(12);
-    element.push_back(15);
-    element.push_back(20);
-    element.push_back(30);
-    element.push_back(32);
-    element.push_back(35);
-    element.remove(42);
-    element.pop_front();
-    element.pop_back();
+    int arr[100];
+    int i,j,n;
+   printf("Enter the size of the list: ");
+    scanf("%d",&n);
+     
+    for(int i = 0; i<=n-1; i++){
+        printf("Enter index %d: ", i);
+        scanf("%d",&arr[i]);
+    }
+    printf("\n\nThe total data in the list is: \n");
+    for( i=0;i<n;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    printf("\n");
 
-    display (element);
-    
-    
+    printf("\nEnter the position you want to delete: ");
+    scanf("%d",&j);
+    while(j<n)
+    {
+        arr[j-1]=arr[j];
+        j++;
+    }
+    n-=1;
+    printf("\n\nAfter deletion the exist data in the list is: \n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    printf("\n\n");
+    return 0;
 }
